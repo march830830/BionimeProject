@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47ECE5C51D07E3C2000A575B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5C41D07E3C2000A575B /* main.m */; };
+		47ECE5C81D07E3C2000A575B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5C71D07E3C2000A575B /* AppDelegate.m */; };
+		47ECE5CE1D07E3C2000A575B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47ECE5CC1D07E3C2000A575B /* Main.storyboard */; };
+		47ECE5D01D07E3C2000A575B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47ECE5CF1D07E3C2000A575B /* Assets.xcassets */; };
+		47ECE5D31D07E3C2000A575B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47ECE5D11D07E3C2000A575B /* LaunchScreen.storyboard */; };
+		47ECE5DE1D07E3C2000A575B /* BionimeWheatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5DD1D07E3C2000A575B /* BionimeWheatherUITests.m */; };
+		47ECE5F51D07E3E4000A575B /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5EB1D07E3E4000A575B /* MainController.m */; };
+		47ECE5F61D07E3E4000A575B /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5EE1D07E3E4000A575B /* MainModel.m */; };
+		47ECE5F71D07E3E4000A575B /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5F11D07E3E4000A575B /* NSString+HTML.m */; };
+		47ECE5F81D07E3E4000A575B /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47ECE5F41D07E3E4000A575B /* MainView.m */; };
+		F492B780B17AE1655FD17F34 /* Pods_BionimeWheather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A8CD591B79A5635A957582 /* Pods_BionimeWheather.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47ECE5DA1D07E3C2000A575B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47ECE5B81D07E3C1000A575B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47ECE5BF1D07E3C1000A575B;
+			remoteInfo = BionimeWheather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47ECE5C01D07E3C2000A575B /* BionimeWheather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BionimeWheather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47ECE5C41D07E3C2000A575B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47ECE5C61D07E3C2000A575B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47ECE5C71D07E3C2000A575B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47ECE5CD1D07E3C2000A575B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47ECE5CF1D07E3C2000A575B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47ECE5D21D07E3C2000A575B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		47ECE5D41D07E3C2000A575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47ECE5D91D07E3C2000A575B /* BionimeWheatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BionimeWheatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47ECE5DD1D07E3C2000A575B /* BionimeWheatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BionimeWheatherUITests.m; sourceTree = "<group>"; };
+		47ECE5DF1D07E3C2000A575B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47ECE5EA1D07E3E4000A575B /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		47ECE5EB1D07E3E4000A575B /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		47ECE5ED1D07E3E4000A575B /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		47ECE5EE1D07E3E4000A575B /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		47ECE5F01D07E3E4000A575B /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		47ECE5F11D07E3E4000A575B /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		47ECE5F31D07E3E4000A575B /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		47ECE5F41D07E3E4000A575B /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		856A61F6D75926170BC2371E /* Pods-BionimeWheather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BionimeWheather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BionimeWheather/Pods-BionimeWheather.debug.xcconfig"; sourceTree = "<group>"; };
+		B529F0D79699F6BBEAA1B34F /* Pods-BionimeWheather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BionimeWheather.release.xcconfig"; path = "Pods/Target Support Files/Pods-BionimeWheather/Pods-BionimeWheather.release.xcconfig"; sourceTree = "<group>"; };
+		E4A8CD591B79A5635A957582 /* Pods_BionimeWheather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BionimeWheather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47ECE5BD1D07E3C1000A575B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F492B780B17AE1655FD17F34 /* Pods_BionimeWheather.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ECE5D61D07E3C2000A575B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47ECE5B71D07E3C1000A575B = {
+			isa = PBXGroup;
+			children = (
+				47ECE5C21D07E3C2000A575B /* BionimeWheather */,
+				47ECE5DC1D07E3C2000A575B /* BionimeWheatherUITests */,
+				47ECE5C11D07E3C2000A575B /* Products */,
+				7F3D907714D12ADB2238F613 /* Pods */,
+				59B793E846905060A10B84D7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		47ECE5C11D07E3C2000A575B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5C01D07E3C2000A575B /* BionimeWheather.app */,
+				47ECE5D91D07E3C2000A575B /* BionimeWheatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47ECE5C21D07E3C2000A575B /* BionimeWheather */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5E81D07E3E4000A575B /* Classes */,
+				47ECE5C61D07E3C2000A575B /* AppDelegate.h */,
+				47ECE5C71D07E3C2000A575B /* AppDelegate.m */,
+				47ECE5CC1D07E3C2000A575B /* Main.storyboard */,
+				47ECE5CF1D07E3C2000A575B /* Assets.xcassets */,
+				47ECE5D11D07E3C2000A575B /* LaunchScreen.storyboard */,
+				47ECE5D41D07E3C2000A575B /* Info.plist */,
+				47ECE5C31D07E3C2000A575B /* Supporting Files */,
+			);
+			path = BionimeWheather;
+			sourceTree = "<group>";
+		};
+		47ECE5C31D07E3C2000A575B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5C41D07E3C2000A575B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47ECE5DC1D07E3C2000A575B /* BionimeWheatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5DD1D07E3C2000A575B /* BionimeWheatherUITests.m */,
+				47ECE5DF1D07E3C2000A575B /* Info.plist */,
+			);
+			path = BionimeWheatherUITests;
+			sourceTree = "<group>";
+		};
+		47ECE5E81D07E3E4000A575B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5E91D07E3E4000A575B /* Controllers */,
+				47ECE5EC1D07E3E4000A575B /* Models */,
+				47ECE5EF1D07E3E4000A575B /* Utilities */,
+				47ECE5F21D07E3E4000A575B /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		47ECE5E91D07E3E4000A575B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5EA1D07E3E4000A575B /* MainController.h */,
+				47ECE5EB1D07E3E4000A575B /* MainController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		47ECE5EC1D07E3E4000A575B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5ED1D07E3E4000A575B /* MainModel.h */,
+				47ECE5EE1D07E3E4000A575B /* MainModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47ECE5EF1D07E3E4000A575B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5F01D07E3E4000A575B /* NSString+HTML.h */,
+				47ECE5F11D07E3E4000A575B /* NSString+HTML.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		47ECE5F21D07E3E4000A575B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47ECE5F31D07E3E4000A575B /* MainView.h */,
+				47ECE5F41D07E3E4000A575B /* MainView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		59B793E846905060A10B84D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4A8CD591B79A5635A957582 /* Pods_BionimeWheather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F3D907714D12ADB2238F613 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				856A61F6D75926170BC2371E /* Pods-BionimeWheather.debug.xcconfig */,
+				B529F0D79699F6BBEAA1B34F /* Pods-BionimeWheather.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47ECE5BF1D07E3C1000A575B /* BionimeWheather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47ECE5E21D07E3C2000A575B /* Build configuration list for PBXNativeTarget "BionimeWheather" */;
+			buildPhases = (
+				2ED7B64373B15C83B3B3E669 /* 📦 Check Pods Manifest.lock */,
+				47ECE5BC1D07E3C1000A575B /* Sources */,
+				47ECE5BD1D07E3C1000A575B /* Frameworks */,
+				47ECE5BE1D07E3C1000A575B /* Resources */,
+				E36B65A98615D328FD5D62BA /* 📦 Embed Pods Frameworks */,
+				E5F78F48401DD1EFC0EF3547 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BionimeWheather;
+			productName = BionimeWheather;
+			productReference = 47ECE5C01D07E3C2000A575B /* BionimeWheather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47ECE5D81D07E3C2000A575B /* BionimeWheatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47ECE5E51D07E3C2000A575B /* Build configuration list for PBXNativeTarget "BionimeWheatherUITests" */;
+			buildPhases = (
+				47ECE5D51D07E3C2000A575B /* Sources */,
+				47ECE5D61D07E3C2000A575B /* Frameworks */,
+				47ECE5D71D07E3C2000A575B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47ECE5DB1D07E3C2000A575B /* PBXTargetDependency */,
+			);
+			name = BionimeWheatherUITests;
+			productName = BionimeWheatherUITests;
+			productReference = 47ECE5D91D07E3C2000A575B /* BionimeWheatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47ECE5B81D07E3C1000A575B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "陳泓諺";
+				TargetAttributes = {
+					47ECE5BF1D07E3C1000A575B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					47ECE5D81D07E3C2000A575B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 47ECE5BF1D07E3C1000A575B;
+					};
+				};
+			};
+			buildConfigurationList = 47ECE5BB1D07E3C1000A575B /* Build configuration list for PBXProject "BionimeWheather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47ECE5B71D07E3C1000A575B;
+			productRefGroup = 47ECE5C11D07E3C2000A575B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47ECE5BF1D07E3C1000A575B /* BionimeWheather */,
+				47ECE5D81D07E3C2000A575B /* BionimeWheatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47ECE5BE1D07E3C1000A575B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47ECE5D31D07E3C2000A575B /* LaunchScreen.storyboard in Resources */,
+				47ECE5D01D07E3C2000A575B /* Assets.xcassets in Resources */,
+				47ECE5CE1D07E3C2000A575B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ECE5D71D07E3C2000A575B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2ED7B64373B15C83B3B3E669 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E36B65A98615D328FD5D62BA /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BionimeWheather/Pods-BionimeWheather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F78F48401DD1EFC0EF3547 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BionimeWheather/Pods-BionimeWheather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47ECE5BC1D07E3C1000A575B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47ECE5F61D07E3E4000A575B /* MainModel.m in Sources */,
+				47ECE5C81D07E3C2000A575B /* AppDelegate.m in Sources */,
+				47ECE5F71D07E3E4000A575B /* NSString+HTML.m in Sources */,
+				47ECE5F51D07E3E4000A575B /* MainController.m in Sources */,
+				47ECE5C51D07E3C2000A575B /* main.m in Sources */,
+				47ECE5F81D07E3E4000A575B /* MainView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ECE5D51D07E3C2000A575B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47ECE5DE1D07E3C2000A575B /* BionimeWheatherUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47ECE5DB1D07E3C2000A575B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47ECE5BF1D07E3C1000A575B /* BionimeWheather */;
+			targetProxy = 47ECE5DA1D07E3C2000A575B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47ECE5CC1D07E3C2000A575B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47ECE5CD1D07E3C2000A575B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		47ECE5D11D07E3C2000A575B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47ECE5D21D07E3C2000A575B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47ECE5E01D07E3C2000A575B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		47ECE5E11D07E3C2000A575B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47ECE5E31D07E3C2000A575B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 856A61F6D75926170BC2371E /* Pods-BionimeWheather.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BionimeWheather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = as.BionimeWheather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47ECE5E41D07E3C2000A575B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B529F0D79699F6BBEAA1B34F /* Pods-BionimeWheather.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BionimeWheather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = as.BionimeWheather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		47ECE5E61D07E3C2000A575B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BionimeWheatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = as.BionimeWheatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BionimeWheather;
+			};
+			name = Debug;
+		};
+		47ECE5E71D07E3C2000A575B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BionimeWheatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = as.BionimeWheatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BionimeWheather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47ECE5BB1D07E3C1000A575B /* Build configuration list for PBXProject "BionimeWheather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47ECE5E01D07E3C2000A575B /* Debug */,
+				47ECE5E11D07E3C2000A575B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47ECE5E21D07E3C2000A575B /* Build configuration list for PBXNativeTarget "BionimeWheather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47ECE5E31D07E3C2000A575B /* Debug */,
+				47ECE5E41D07E3C2000A575B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47ECE5E51D07E3C2000A575B /* Build configuration list for PBXNativeTarget "BionimeWheatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47ECE5E61D07E3C2000A575B /* Debug */,
+				47ECE5E71D07E3C2000A575B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47ECE5B81D07E3C1000A575B /* Project object */;
+}
