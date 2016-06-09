@@ -133,9 +133,9 @@
         //刪除對應的陣列元素
         [[MainModel shareInstance].weeklyArray removeObjectAtIndex:indexPath.row];
         
-        for (id object in [MainModel shareInstance].weeklyArray) {
-            [self.databaseModel updateDataBaseByInfo:object TableName:@"WEEK"];
-        }
+//        for (id object in [MainModel shareInstance].weeklyArray) {
+//            [self.databaseModel updateDataBaseByInfo:object TableName:@"WEEK"];
+//        }
         
         //刪除對應的表格項目
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
