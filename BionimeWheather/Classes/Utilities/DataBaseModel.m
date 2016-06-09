@@ -162,7 +162,7 @@
     NSString *dbpath = [document stringByAppendingPathComponent:@"MYDataBase.db"];
     self.db = [FMDatabase databaseWithPath:dbpath];
     [self.db open];
-    NSLog(@"%@",dbpath);
+//    NSLog(@"%@",dbpath);
 }
 
 //- (NSString*)readDataBaseByUserName:(NSString*)userName Message:(NSString*)message TableName:(NSString*)tableName {

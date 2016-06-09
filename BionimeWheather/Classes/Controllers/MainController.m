@@ -12,6 +12,8 @@
 #import "NSString+HTML.h"
 #import "MainModel.h"
 #import "DataBaseModel.h"
+#import "HTMLReader.h"
+
 
 @interface MainController ()<UITableViewDataSource,UITableViewDelegate,MWFeedParserDelegate>
 
@@ -36,11 +38,12 @@
     NSURL *feedURL = [NSURL URLWithString:@"http://www.cwb.gov.tw/rss/forecast/36_08.xml"];
     self.feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
     self.feedParser.delegate = self;
-    self.feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
+    self.feedParser.feedParseType = ParseTypeFull;
     self.feedParser.connectionType = ConnectionTypeAsynchronously;
     [self.feedParser parse];
     
     self.databaseModel = [[DataBaseModel alloc] init];
+    
  
 }
 
@@ -62,7 +65,6 @@
     self.headerView.titleLabel.text = [NSString stringWithFormat:@"%@ 今日天氣預報",[[MainModel shareInstance].formatter stringFromDate:todayItem.date]];
     self.headerView.todayInfoLabel.text = todayArray[0];
     self.headerView.todaySummaryLabel.text = todayArray[1];
-    NSLog(@"today = %@",todayDataArray);
     
     
     [self reloadDataBaseWithTodayTable:todayDataArray todayItem:todayItem];
@@ -76,15 +78,11 @@
         weeklyArray = [[MainModel shareInstance].summaryString componentsSeparatedByString:@"<BR> "];
         
         [MainModel shareInstance].weeklyArray = [NSMutableArray arrayWithArray:weeklyArray];
-//        for (int i = 0; i< weeklyArray.count; i ++) {
-//            [[MainModel shareInstance].weeklyArray addObject:[[weeklyArray objectAtIndex:i] componentsSeparatedByString:@" "]];
-//        }
         
         [self.databaseModel deleteDataBaseByTableName:@"WEEK"];
         for (id object in [MainModel shareInstance].weeklyArray) {
             [self.databaseModel insertDataBaseByInfo:object TableName:@"WEEK"];
         }
-        NSLog(@"%@",[MainModel shareInstance].weeklyArray);
 
     }
 
@@ -127,20 +125,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //判斷編輯表格的類型為「刪除」
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        //刪除對應的陣列元素
         [[MainModel shareInstance].weeklyArray removeObjectAtIndex:indexPath.row];
-        
-//        for (id object in [MainModel shareInstance].weeklyArray) {
-//            [self.databaseModel updateDataBaseByInfo:object TableName:@"WEEK"];
-//        }
-        
-        //刪除對應的表格項目
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
         
-        //如果該分類已沒有任何項目則刪除整個分類
         if ([MainModel shareInstance].weeklyArray.count == 0) {
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
         }
@@ -157,27 +146,18 @@
 #pragma mark MWFeedParserDelegate
 
 - (void)feedParserDidStart:(MWFeedParser *)parser {
-    //    NSLog(@"Started Parsing: %@", parser.url);
+
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
-    //        NSLog(@"infoTitle: “%@”", info.title);
-    //        NSLog(@"infoSummary: “%@”", info.summary);
-    
     self.title = info.title;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
-    //        NSLog(@"itemTitle: “%@”", item.title);
-    //        NSLog(@"itemSummary: “%@”", item.summary);
-    //    NSLog(@"Parsed Feed author: “%@”", item.author);
-    //    NSLog(@"Parsed Feed date: “%@”", item.date);
-    
     if (item) [[MainModel shareInstance].parsedItems addObject:item];
 }
 //
 - (void)feedParserDidFinish:(MWFeedParser *)parser {
-    //    NSLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
     [self updateTableWithParsedItems];
 }
 

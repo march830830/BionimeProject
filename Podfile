@@ -6,5 +6,6 @@ target 'BionimeWheather' do
 
 pod 'MWFeedParser'
 pod 'FMDB'
+pod "HTMLReader"
 
 end
