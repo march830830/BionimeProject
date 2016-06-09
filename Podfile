@@ -5,5 +5,6 @@ use_frameworks!
 target 'BionimeWheather' do
 
 pod 'MWFeedParser'
+pod 'FMDB'
 
 end

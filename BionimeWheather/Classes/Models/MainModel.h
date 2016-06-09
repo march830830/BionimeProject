@@ -11,6 +11,7 @@
 @interface MainModel : NSObject
 
 + (MainModel*) shareInstance;
+@property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSArray *itemsToDisplay;
 @property (nonatomic, strong) NSMutableArray *parsedItems;
 @property (nonatomic, strong) NSString *dateString;

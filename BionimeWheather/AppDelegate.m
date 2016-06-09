@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DataBaseModel.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    DataBaseModel *databaseModel = [[DataBaseModel alloc] init];
+    [databaseModel create];
+    
     return YES;
 }
 

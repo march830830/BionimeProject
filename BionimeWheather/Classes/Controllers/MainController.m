@@ -11,6 +11,7 @@
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
 #import "MainModel.h"
+#import "DataBaseModel.h"
 
 @interface MainController ()<UITableViewDataSource,UITableViewDelegate,MWFeedParserDelegate>
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) HeaderView *headerView;
 @property (nonatomic, strong) MWFeedParser *feedParser;
 @property (nonatomic, strong) NSMutableArray *tempArray;
+@property (nonatomic, strong) DataBaseModel *databaseModel;
 
 @end
 
@@ -37,6 +39,8 @@
     self.feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
     self.feedParser.connectionType = ConnectionTypeAsynchronously;
     [self.feedParser parse];
+    
+    self.databaseModel = [[DataBaseModel alloc] init];
  
 }
 
@@ -48,8 +52,6 @@
     NSArray *todayArray = [NSArray array];
     NSMutableArray *todayDataArray = [NSMutableArray array];
     MWFeedItem *todayItem = [[MainModel shareInstance].itemsToDisplay objectAtIndex:0];
-    self.headerView.todayInfoLabel.text = todayItem.title;
-    self.headerView.todaySummaryLabel.text = todayItem.summary;
     if (todayItem.summary) {
         todayArray = [todayItem.summary componentsSeparatedByString:@" <br> "];
         
@@ -57,26 +59,14 @@
             [todayDataArray addObject:[[todayArray objectAtIndex:i] componentsSeparatedByString:@" "]];
         }
     }
-    NSLog(@"today = %@",todayDataArray[0][0]);
-    NSLog(@"today = %@",todayDataArray[0][1]);
-    NSLog(@"today = %@",todayDataArray[0][2]);
-    NSLog(@"today = %@",todayDataArray[0][3]);
-    NSLog(@"today = %@",todayDataArray[0][4]);
-    NSLog(@"today = %@",todayDataArray[0][5]);
-    NSLog(@"today = %@",todayDataArray[0][6]);
-    NSLog(@"today = %@",todayDataArray[0][7]);
+    self.headerView.titleLabel.text = [NSString stringWithFormat:@"%@ 今日天氣預報",[[MainModel shareInstance].formatter stringFromDate:todayItem.date]];
+    self.headerView.todayInfoLabel.text = todayArray[0];
+    self.headerView.todaySummaryLabel.text = todayArray[1];
+    NSLog(@"today = %@",todayDataArray);
+    
+    
+    [self reloadDataBaseWithTodayTable:todayDataArray todayItem:todayItem];
 
-    NSLog(@"today = %@",todayDataArray[1][0]);
-    NSLog(@"today = %@",todayDataArray[1][1]);
-    NSLog(@"today = %@",todayDataArray[1][2]);
-    NSLog(@"today = %@",todayDataArray[1][3]);
-    NSLog(@"today = %@",todayDataArray[1][4]);
-    NSLog(@"today = %@",todayDataArray[1][5]);
-    NSLog(@"today = %@",todayDataArray[1][6]);
-    NSLog(@"today = %@",todayDataArray[1][7]);
-//    NSLog(@"today = %@",todayArray[1]);
-
-//
     
     MWFeedItem *weeklyItem = [[MainModel shareInstance].itemsToDisplay objectAtIndex:1];
     [MainModel shareInstance].summaryString = weeklyItem.summary;
@@ -85,16 +75,84 @@
     if ([MainModel shareInstance].summaryString) {
         weeklyArray = [[MainModel shareInstance].summaryString componentsSeparatedByString:@"<BR> "];
         
-        for (int i = 0; i< weeklyArray.count; i ++) {
-            [[MainModel shareInstance].weeklyArray addObject:[[weeklyArray objectAtIndex:i] componentsSeparatedByString:@" "]];
-        }
+        [MainModel shareInstance].weeklyArray = [NSMutableArray arrayWithArray:weeklyArray];
+//        for (int i = 0; i< weeklyArray.count; i ++) {
+//            [[MainModel shareInstance].weeklyArray addObject:[[weeklyArray objectAtIndex:i] componentsSeparatedByString:@" "]];
+//        }
         
-//        NSLog(@"%@",[MainModel shareInstance].weeklyArray);
+        [self.databaseModel deleteDataBaseByTableName:@"WEEK"];
+        for (id object in [MainModel shareInstance].weeklyArray) {
+            [self.databaseModel insertDataBaseByInfo:object TableName:@"WEEK"];
+        }
+        NSLog(@"%@",[MainModel shareInstance].weeklyArray);
 
     }
 
     [self.tableView reloadData];
 }
+
+- (void) reloadDataBaseWithTodayTable:(NSMutableArray*) todayDataArray todayItem:(MWFeedItem*) todayItem {
+    [self.databaseModel deleteDataBaseByTableName:@"TODAYMORNING"];
+    [self.databaseModel deleteDataBaseByTableName:@"TODAYNIGHT"];
+    [self.databaseModel insertDataBaseByToday:[[MainModel shareInstance].formatter stringFromDate:todayItem.date] Time:todayDataArray[0][0] Status:todayDataArray[0][1] TempMin:todayDataArray[0][3] TempMax:todayDataArray[0][5] Rain:todayDataArray[0][7] TableName:@"TODAYMORNING"];
+    [self.databaseModel insertDataBaseByToday:[[MainModel shareInstance].formatter stringFromDate:todayItem.date] Time:todayDataArray[1][0] Status:todayDataArray[1][1] TempMin:todayDataArray[1][3] TempMax:todayDataArray[1][5] Rain:todayDataArray[1][7] TableName:@"TODAYNIGHT"];
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [MainModel shareInstance].weeklyArray.count;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identify = @"cellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = [MainModel shareInstance].weeklyArray[indexPath.row];
+    cell.textLabel.numberOfLines = 0;
+    
+    return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //判斷編輯表格的類型為「刪除」
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        //刪除對應的陣列元素
+        [[MainModel shareInstance].weeklyArray removeObjectAtIndex:indexPath.row];
+        
+        for (id object in [MainModel shareInstance].weeklyArray) {
+            [self.databaseModel updateDataBaseByInfo:object TableName:@"WEEK"];
+        }
+        
+        //刪除對應的表格項目
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        
+        //如果該分類已沒有任何項目則刪除整個分類
+        if ([MainModel shareInstance].weeklyArray.count == 0) {
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
 
 #pragma mark MWFeedParserDelegate
 
@@ -103,15 +161,15 @@
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
-//        NSLog(@"infoTitle: “%@”", info.title);
-//        NSLog(@"infoSummary: “%@”", info.summary);
+    //        NSLog(@"infoTitle: “%@”", info.title);
+    //        NSLog(@"infoSummary: “%@”", info.summary);
     
     self.title = info.title;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
-//        NSLog(@"itemTitle: “%@”", item.title);
-//        NSLog(@"itemSummary: “%@”", item.summary);
+    //        NSLog(@"itemTitle: “%@”", item.title);
+    //        NSLog(@"itemSummary: “%@”", item.summary);
     //    NSLog(@"Parsed Feed author: “%@”", item.author);
     //    NSLog(@"Parsed Feed date: “%@”", item.date);
     
@@ -139,33 +197,6 @@
     //    [self updateTableWithParsedItems];
 }
 
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [MainModel shareInstance].weeklyArray.count;
-}
-
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identify = @"cellIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
-    }
-    
-    cell.textLabel.text = [MainModel shareInstance].weeklyArray[indexPath.row];
-    cell.textLabel.numberOfLines = 0;
-    
-    return cell;
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

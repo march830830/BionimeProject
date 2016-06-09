@@ -43,6 +43,7 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
+                <outlet property="titleLabel" destination="27G-wb-6md" id="ndm-Ih-Jgq"/>
                 <outlet property="todayInfoLabel" destination="C4O-nN-bgp" id="lTd-Oo-Kdy"/>
                 <outlet property="todaySummaryLabel" destination="Mjp-cO-BKL" id="7tg-AX-vu2"/>
             </connections>

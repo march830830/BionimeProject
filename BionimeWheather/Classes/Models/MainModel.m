@@ -29,6 +29,9 @@
 
         
         self.parsedItems = [NSMutableArray array];
+        
+        self.formatter = [[NSDateFormatter alloc] init];
+        [self.formatter setDateFormat:@"yyyy-MM-dd"];
     }
     return self;
 }

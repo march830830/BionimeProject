@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *todayInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *todaySummaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
