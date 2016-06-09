@@ -10,4 +10,27 @@
 
 @implementation MainModel
 
++ (MainModel*) shareInstance {
+    static MainModel *mainModel = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        mainModel = [[MainModel alloc] init];
+     });
+    return mainModel;
+}
+
+
+
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self.itemsToDisplay = [NSArray array];
+        self.weeklyArray = [NSMutableArray array];
+
+        
+        self.parsedItems = [NSMutableArray array];
+    }
+    return self;
+}
+
 @end

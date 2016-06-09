@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="T7B-6v-MJB" customClass="HeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日天氣預報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27G-wb-6md">
+                    <rect key="frame" x="109" y="40" width="102" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4O-nN-bgp">
+                    <rect key="frame" x="50" y="106" width="220" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjp-cO-BKL">
+                    <rect key="frame" x="50" y="223" width="220" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.97087299999999999" green="0.39460508960000001" blue="0.73530063140000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="C4O-nN-bgp" firstAttribute="top" secondItem="27G-wb-6md" secondAttribute="bottom" constant="45" id="EWV-8p-h9a"/>
+                <constraint firstAttribute="trailing" secondItem="Mjp-cO-BKL" secondAttribute="trailing" constant="50" id="Gzk-Mb-HCA"/>
+                <constraint firstItem="27G-wb-6md" firstAttribute="centerX" secondItem="T7B-6v-MJB" secondAttribute="centerX" id="K0C-yO-xgb"/>
+                <constraint firstItem="C4O-nN-bgp" firstAttribute="leading" secondItem="T7B-6v-MJB" secondAttribute="leading" constant="50" id="RGi-x5-1Kv"/>
+                <constraint firstItem="Mjp-cO-BKL" firstAttribute="top" secondItem="C4O-nN-bgp" secondAttribute="bottom" constant="96" id="ksd-qc-CC7"/>
+                <constraint firstAttribute="trailing" secondItem="C4O-nN-bgp" secondAttribute="trailing" constant="50" id="nL8-jR-ihL"/>
+                <constraint firstItem="Mjp-cO-BKL" firstAttribute="leading" secondItem="T7B-6v-MJB" secondAttribute="leading" constant="50" id="ogw-Ky-3HL"/>
+                <constraint firstItem="27G-wb-6md" firstAttribute="top" secondItem="T7B-6v-MJB" secondAttribute="top" constant="40" id="w3x-gm-Vr5"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="todayInfoLabel" destination="C4O-nN-bgp" id="lTd-Oo-Kdy"/>
+                <outlet property="todaySummaryLabel" destination="Mjp-cO-BKL" id="7tg-AX-vu2"/>
+            </connections>
+            <point key="canvasLocation" x="302" y="148"/>
+        </view>
+    </objects>
+</document>

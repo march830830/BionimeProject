@@ -10,4 +10,11 @@
 
 @interface MainModel : NSObject
 
++ (MainModel*) shareInstance;
+@property (nonatomic, strong) NSArray *itemsToDisplay;
+@property (nonatomic, strong) NSMutableArray *parsedItems;
+@property (nonatomic, strong) NSString *dateString;
+@property (nonatomic, strong) NSString *summaryString;
+@property (nonatomic, strong) NSMutableArray *weeklyArray;
+
 @end
